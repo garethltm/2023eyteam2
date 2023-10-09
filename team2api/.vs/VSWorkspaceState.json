@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Data",
+    "\\Handler",
+    "\\Helper",
+    "\\obj",
+    "\\obj\\Debug",
+    "\\obj\\Debug\\net7.0",
+    "\\obj\\Release",
+    "\\Properties"
+  ],
+  "SelectedNode": "\\Controllers\\A2Controller.cs",
+  "PreviewInSolutionExplorer": false
+}
