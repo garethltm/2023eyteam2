@@ -17,8 +17,9 @@ body {
 }
 
 #home,
-#events,
-#points {
+#registration,
+#login,
+#events {
     color: white;
     margin-right: 20px; /* Adds some space between the items */
     -webkit-text-size-adjust: 100%;
@@ -49,13 +50,13 @@ body {
     outline: none;
 }
 
-
 #logo {
-    width: 80px;
-    height: 80px;
-    margin: 80px 0 0 5px;
-    margin-top: auto;
+   width: 80px;
+   height: 80px;
+   margin-right:auto; /* Pushes the rest of the items to the right */
 }
+
+
 #logout{
         position: absolute; /* Positioning context is the entire document */
         top: 0; /* Positioned at the top */
