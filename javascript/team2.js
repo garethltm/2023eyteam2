@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
     const eventsContainer = document.getElementById('events-list');
     const upcomingEventsList = document.getElementById('upcoming-events-list');
 
     // Add event listener to the events container
     eventsContainer.addEventListener('click', function(e) {
+        
+        // When "Add to Upcoming" button is clicked
         if (e.target && e.target.classList.contains('add-event-btn')) {
             // Get the event card (the parent element of the button)
             const eventCard = e.target.parentElement;
@@ -22,6 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
             upcomingEventsList.appendChild(newEventListItem);
 
             // Remove the original event card from the events container
+            eventsContainer.removeChild(eventCard);
+        }
+        
+        // When "Remove Event" button is clicked
+        if (e.target && e.target.classList.contains('remove-event-btn')) {
+            // Get the event card (the parent element of the button)
+            const eventCard = e.target.parentElement;
+            
+            // Remove the event card from the events container
             eventsContainer.removeChild(eventCard);
         }
     });
@@ -243,7 +255,8 @@ submitBtn.onclick = function() {
         <p>Location: ${location}</p>
         <p>Description: ${description}</p>
         <a href="#" class="event-link">Learn More</a>
-        <button class="add-event-btn">Add to Upcoming</button>
+        <button class="remove-event-btn">Remove Event</button>
+
     `;
 
     document.getElementById("events-list").appendChild(newEventCard);
@@ -265,25 +278,7 @@ submitBtn.onclick = function() {
     // Save events array back to localStorage
     localStorage.setItem('events', JSON.stringify(events));
 }
-const events = JSON.parse(localStorage.getItem('events') || '[]');
 
-    // Iterate over events and add each to events-list
-    events.forEach(event => {
-        const newEventCard = document.createElement('div');
-        newEventCard.className = 'event-card';
-
-        newEventCard.innerHTML = `
-            <h2>${event.title}</h2>
-            <p>Date: ${event.date}</p>
-            <p>Time: ${event.time}</p>
-            <p>Location: ${event.location}</p>
-            <p>Description: ${event.description}</p>
-            <a href="#" class="event-link">Learn More</a>
-            <button class="add-event-btn">Add to Upcoming</button>
-        `;
-
-        document.getElementById("events-list").appendChild(newEventCard);
-    });
 
     
 })
