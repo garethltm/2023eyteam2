@@ -10,7 +10,7 @@
 <body>
     <div>
         <img id="logo" src="https://cws.auckland.ac.nz/ako/api/Logo" alt="Logo">
-        <span id="events" class="unicode" onclick="showhome()">Home</span>
+        <span id="home" class="unicode" onclick="showhome()">Home</span>
         <span id="registration" class="unicode">register</span>
         <span id="login" class="unicode">login</span>
         <span id="events" class="unicode"onclick="showevents()">events</span>
@@ -31,6 +31,15 @@
             Discover an array of events and networking opportunities, tailored to your interests and schedule. Navigate effortlessly with clickable map links, immerse yourself in cultural learnings, and even find friends with common interests. From providing financial support options to fostering connections between students, UniConnect is your dedicated companion in making your university journey more socially enriching.
             
             Join us, and redefine your university experience.</p>
+        
+    </div>
+    <div class="events-section">
+        <h2>Your Upcoming Events</h2>
+        <ul class="events-list" id="upcoming-events-list">
+            <li><a href="#">Event 2: International Students Meetup</a></li>
+            <li><a href="#">Event 3: Tech Talk: Future of Education</a></li>
+            <li><a href="#">Event 4: UniConnect Fest</a></li>
+        </ul>
     </div>
 
     <div id="registration-container">
@@ -62,15 +71,56 @@
         <button type="button" onclick="submitLogin()">Login</button>
     </div>
 
-    <div id="events-container" style="display: none;">
+    <div id="events-container" style="display: block;">
         <h1>Events</h1>
-        <div id="events-list"></div>
+        <div id="events-list">
+            <!-- Event 1 Card -->
+            <div class="event-card">
+                <h2>Introduction to Campus Life</h2>
+                <p>Date: 20th October 2023</p>
+                <p>Time: 2:00 PM - 4:00 PM</p>
+                <p>Location: Central Auditorium</p>
+                <p>Description: Join us for an immersive session about the vibrant life on campus. Meet fellow students and explore what the campus has to offer!</p>
+                <a href="#" class="event-link">Learn More</a>
+                <button class="add-event-btn">Add to Upcoming</button>
+            </div>
+    
+            <!-- Event 2 Card -->
+            <div class="event-card">
+                <h2>International Students Meetup</h2>
+                <p>Date: 23rd October 2023</p>
+                <p>Time: 5:00 PM - 7:00 PM</p>
+                <p>Location: Global Hall</p>
+                <p>Description: An exclusive meetup for international students. A chance to connect, share experiences, and form lasting friendships.</p>
+                <a href="#" class="event-link">Learn More</a>
+                <button class="add-event-btn">Add to Upcoming</button>
+            </div>
+    
+            <!-- Event 3 Card -->
+            <div class="event-card">
+                <h2>Tech Talk: Future of Education</h2>
+                <p>Date: 30th October 2023</p>
+                <p>Time: 1:00 PM - 3:00 PM</p>
+                <p>Location: Tech Auditorium</p>
+                <p>Description: Dive into the world of technology and discover how it's shaping the future of education. Featuring speakers from leading tech companies.</p>
+                <a href="#" class="event-link">Learn More</a>
+                <button class="add-event-btn">Add to Upcoming</button>
+            </div>
+    
+            <!-- Event 4 Card -->
+            <div class="event-card">
+                <h2>UniConnect Fest</h2>
+                <p>Date: 5th November 2023</p>
+                <p>Time: 11:00 AM - 6:00 PM</p>
+                <p>Location: Central Park</p>
+                <p>Description: Celebrate the spirit of connection at UniConnect Fest! Music, food, games, and loads of fun activities await!</p>
+                <a href="#" class="event-link">Learn More</a>
+                <button class="add-event-btn">Add to Upcoming</button>
+            </div>
+        </div>
     </div>
-    <div id="shop-container" style="display: none;">
-        <h1>Whare hokohoko</h1>
-        <input type="text" id="search-box" placeholder="Search for items...">
-        <div id="items-list"></div>
-    </div>
+    
+
 
 <script src="team2.js"></script>
 </body>

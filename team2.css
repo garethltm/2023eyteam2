@@ -47,51 +47,33 @@ label {
     margin-bottom: 8px; 
 }
 
-.event-card,
-.item-card {
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px 0;
+.event-card {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-.event-title,
-.item-info h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
+.event-card h2 {
+    margin-top: 0;
 }
 
-.event-description, .event-location,
-.item-info p {
-    font-size: 18px;
-    margin-bottom: 8px;
+.event-link {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
 }
 
-.event-time {
-    font-size: 16px;
-    margin-bottom: 8px;
+.event-link:hover {
+    background-color: #0056b3;
 }
 
-.item-card img {
-    width: 100px; 
-    height: auto; 
-    margin-right: 16px; 
-}
-
-.item-info {
-    flex-grow: 1; 
-}
-
-.item-price {
-    color: green; 
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#search-box {
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    font-size: 16px; 
-}
 
 #navbar {
     position: absolute; /* Positioning context is the entire document */

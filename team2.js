@@ -1,14 +1,9 @@
 const showhome = () => {
     document.getElementById("content-container").style.display = "block";
-    document.getElementById("events-container").style.display = "none";
+    document.getElementById("events-container").style.display = "block";
     document.getElementById("registration-container").style.display = "none";
     document.getElementById("login-container").style.display = "none";
-    document.getElementById("shop-container").style.display = "none";
-    document.getElementById("game-container").style.display = "none";
-    document.getElementById("game").style.backgroundColor = "transparent";
-    document.getElementById("shop").style.backgroundColor = "transparent";
     document.getElementById("home").style.backgroundColor = "red";
-    document.getElementById("guestbook").style.backgroundColor = "transparent";
     document.getElementById("registration-container").style.backgroundColor = "transparent";
     document.getElementById("login").style.backgroundColor = "transparent";
     document.getElementById("events").style.backgroundColor = "transparent";
@@ -20,12 +15,7 @@ const showregistration = () => {
     document.getElementById("login-container").style.display = "none";
     document.getElementById("events-container").style.display = "none";
     document.getElementById("registration-container").style.display = "block";
-    document.getElementById("shop-container").style.display = "none";
-    document.getElementById("game-container").style.display = "none";
-    document.getElementById("game").style.backgroundColor = "transparent";
-    document.getElementById("shop").style.backgroundColor = "transparent";
     document.getElementById("home").style.backgroundColor = "transparent";
-    document.getElementById("guestbook").style.backgroundColor = "transparent";
     document.getElementById("registration").style.backgroundColor = "red";
     document.getElementById("login").style.backgroundColor = "transparent";
     document.getElementById("events").style.backgroundColor = "transparent";
@@ -80,12 +70,7 @@ const showlogin = () => {
     document.getElementById("registration-container").style.display = "none";
     document.getElementById("login-container").style.display = "block";
     document.getElementById("events-container").style.display = "none";
-    document.getElementById("shop-container").style.display = "none";
-    document.getElementById("game-container").style.display = "none";
-    document.getElementById("game").style.backgroundColor = "transparent";
-    document.getElementById("shop").style.backgroundColor = "transparent";
     document.getElementById("home").style.backgroundColor = "transparent";
-    document.getElementById("guestbook").style.backgroundColor = "transparent";
     document.getElementById("registration").style.backgroundColor = "transparent";
     document.getElementById("login").style.backgroundColor = "red";
     document.getElementById("events").style.backgroundColor = "transparent";
@@ -148,11 +133,11 @@ function formatDate(isoString) {
 
 const showEvents = () => {
     
-    document.getElementById("content-container").style.display = "none";
+    document.getElementById("content-container").style.display = "block";
     document.getElementById("registration-container").style.display = "none";
     document.getElementById("login-container").style.display = "none";
-    document.getElementById("shop-container").style.display = "none";
-    document.getElementById("shop").style.backgroundColor = "transparent";
+    document.getElementById("events-container").style.display = "block";
+    
     document.getElementById("home").style.backgroundColor = "transparent";
     document.getElementById("registration").style.backgroundColor = "transparent";
     document.getElementById("login").style.backgroundColor = "transparent";
@@ -161,9 +146,6 @@ const showEvents = () => {
     
     document.getElementById("events-container").style.display = "block";
 
-    const eventList = document.getElementById("events-list");
-    
-    eventList.innerHTML = "";
 }
 
 
@@ -283,3 +265,34 @@ function fetchAPIContent() {
 }
 
 fetchAPIContent();
+document.addEventListener('DOMContentLoaded', function() {
+    const eventsContainer = document.getElementById('events-list');
+    const upcomingEventsList = document.getElementById('upcoming-events-list');
+
+    eventsContainer.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('add-event-btn')) {
+            // Get the event card (the parent element of the button)
+            const eventCard = e.target.parentElement;
+
+            // Create a new list item for the upcoming events list
+            const newEventListItem = document.createElement('li');
+
+            // Get the event title (we assume it's the text of the h2 element inside the card)
+            const eventTitle = eventCard.querySelector('h2').innerText;
+
+            // Create a new link for the list item
+            const newEventLink = document.createElement('a');
+            newEventLink.href = "#";
+            newEventLink.innerText = eventTitle;
+
+            // Append the link to the list item
+            newEventListItem.appendChild(newEventLink);
+
+            // Append the list item to the upcoming events list
+            upcomingEventsList.appendChild(newEventListItem);
+
+            // Remove the original event card from the events container
+            eventsContainer.removeChild(eventCard);
+        }
+    });
+});
