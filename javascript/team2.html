@@ -3,7 +3,7 @@
 
 <head>
     <title>Team2</title>
-    <link rel="icon" type="image" href="../2023eyteam2/static/cbs.png">
+    <link rel="icon" type="image" href="../javascript/static/cbs.png">
     <link rel="stylesheet" href="team2.css">
 </head>
 
@@ -11,13 +11,12 @@
     <header class="navbar-container">
         <nav>
             <div>
-                <img id="logo" src="../2023eyteam2/static/cbs.png" alt="Logo">
-                <span id="home" class="unicode" >Home</span>
-                <span id="registration" class="unicode" >Register</span>
-                <span id="login" class="unicode" >Login</span>
-                <span id="logout" class="unicode" style="display: none;">Logout</span>
-                <span id="events" class="unicode" >Events</span>
-                <span id="distance" class="unicode" style="display: none;">distance</span>
+                <img id="logo" src="../javascript/static/cbs.png" alt="Logo">
+                <span id="home" class="unicode" onclick="showhome()">Home</span>
+                <span id="registration" class="unicode">Register</span>
+                <span id="login" class="unicode">Login</span>
+                <span id="events" class="unicode" onclick="document.getElementById('events-container').scrollIntoView();">Events</span>
+                <span id="distance" class="unicode" >distance</span>
                 <span id="username-display" style="right: 10px; color: white; display: none;"></span>
             </div>
         </nav>
@@ -51,16 +50,9 @@
         </div>
         <button id="submitLogin" type="button" >Login</button>
     </div>
-    
     <div id="content-container">
-        <p class="home-text">Embarking on the journey of higher education is an exhilarating chapter in a student’s life, offering a blend of academic pursuits, personal growth, and boundless opportunities. Yet, the road isn't without its challenges. With the aftermath of a global pandemic reshaping our social interactions, coupled with the myriad of personal and logistical barriers university students often face, it's more crucial than ever to find innovative ways to stay connected.
-
-            At C&BS, we recognize these challenges - be it the rush of conflicting schedules, the daunting commute, language barriers that international students face, or the anxiety of venturing into new social territories. That's why we've created a comprehensive platform tailored for university students to help bridge these gaps.
-            
-            Discover an array of events and networking opportunities, tailored to your interests and schedule. Navigate effortlessly with clickable map links, immerse yourself in cultural learnings, and even find friends with common interests. From providing financial support options to fostering connections between students, UniConnect is your dedicated companion in making your university journey more socially enriching.
-            
-            Join us, and redefine your university experience.</p>
-        
+        <img id="bg" src="../javascript/static/uoa.jpg">
+        <p class="home-text">WHAT'S ON</p>
     </div>
 
     <div id="events-container" style="display: block;">
@@ -112,7 +104,7 @@
         </div>
     </div>
 
-    <div class="commute-container" style="display: none;">
+    <!-- <div class="commute-container" style="display: none;">
         <h2>Commute Distance Calculator</h2>
         <label for="start-location">Start Location:</label>
         <input type="text" id="start-location" placeholder="Enter starting point">
@@ -126,7 +118,7 @@
             <p><strong>Distance:</strong> <span id="distance-result">-</span></p>
             <p><strong>Estimated Time:</strong> <span id="time-result">-</span></p>
         </div>
-    </div>
+    </div> -->
     
     
 
