@@ -11,18 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
     document.getElementById("home").addEventListener("click", showHome);
+    document.getElementById("logout").addEventListener("click", redirectToTeam2());
     
-    function showRegistration() {
-        document.getElementById("content-container").style.display = "none";
-        document.getElementById("login-container").style.display = "none";
-        document.getElementById("events-container").style.display = "none";
-        document.getElementById("registration-container").style.display = "block";
-        document.getElementById("home").style.backgroundColor = "transparent";
-        document.getElementById("registration").style.backgroundColor = "red";
-        document.getElementById("login").style.backgroundColor = "transparent";
-        document.getElementById("events").style.backgroundColor = "transparent";
-    }
-    document.getElementById("registration").addEventListener("click", showRegistration);
     function showdistance() {
     document.getElementById("content-container").style.display = "none";
     document.getElementById("login-container").style.display = "none";
@@ -40,60 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    function showLogin  () {
-    document.getElementById("content-container").style.display = "none";
-    document.getElementById("registration-container").style.display = "none";
-    document.getElementById("login-container").style.display = "block";
-    document.getElementById("events-container").style.display = "none";
-    document.getElementById("home").style.backgroundColor = "transparent";
-    document.getElementById("registration").style.backgroundColor = "transparent";
-    document.getElementById("login").style.backgroundColor = "red";
-    document.getElementById("events").style.backgroundColor = "transparent";
-    }
-
-    function submitLogin() {
-
-    const usernameInput = document.getElementById('login-username-input');
-    const passwordInput = document.getElementById('login-password-input');
-
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-
-    if (username === 'organizer') {
-        window.location.href = 'organizer.html';
-    }
-    else if(username === 'student'){
-        window.location.href = 'student.html';
-    }
-
-
-
-    const base64Credentials = btoa(username + ':' + password);
-    }
-
-
-    document.getElementById("login").addEventListener("click", showLogin);
-    document.addEventListener("DOMContentLoaded", function() {
-
-
-    const savedUsername = localStorage.getItem('username');
-    if(savedUsername) {
-        document.getElementById("username-display").innerText = "Hello, " + savedUsername + "!";
-        document.getElementById("username-display").style.display = "block";
-        document.getElementById("logout-button").style.display = "block";
-    }
-    });
-    function logout() {
-
-    localStorage.removeItem('username');
-
-
-    document.getElementById("username-display").style.display = "none";
-    document.getElementById("logout-button").style.display = "none";
-
-
-    }
-    document.getElementById("submitLogin").addEventListener("click", submitLogin);
+    
 
 
     function formatDate(isoString) {
@@ -170,11 +107,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     });
 
+
+
     function redirectToTeam2() {
-        window.location.href = "team2.html";
-        }
-    
-    document.getElementById("logout").addEventListener("click", redirectToTeam2);
-    
+    window.location.href = "team2.html";
+    }
     
 })
