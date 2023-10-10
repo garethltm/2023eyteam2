@@ -1,41 +1,90 @@
 body {
     background: #797878; /* Sonic Silver */
-    color: #FFDB00; /* Sizzling Sunrise */
-    font-family: 'Arial', sans-serif;
+    color: #797878; /* Sonic Silver */
+    font-family: 'Optima Bold Italic', sans-serif;
+    line-height: 1.6;
 }
+
+.navbar-container {
+    display: flex;
+    position: relative;
+    justify-content: flex-start; /* Aligns items to the start of the container */
+    align-items: center; /* Centers items vertically */
+    padding-left: 20px; /* Adds some space from the left edge of the page */
+    height: 85px; /* Sets the height of the navbar */
+    width: 100%; /* Makes the navbar span the full width of the page */
+    background-color: #333; /* Adds a background color to the navbar */
+}
+
+#home,
+#events,
+#points {
+    color: white;
+    margin-right: 20px; /* Adds some space between the items */
+    -webkit-text-size-adjust: 100%;
+    --brand-color: #ffe600;
+    --ey-color: #ffe600;
+    --parthenon-color: #1a9afa;
+    --window-height: 1067px;
+    --scrollbar-width: 17px;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    -webkit-box-direction: normal;
+    margin: auto;
+    overflow: visible;
+    text-transform: none;
+    -webkit-appearance: button;
+    font-family: inherit;
+    font-size: 1.4rem;
+    line-height: 22px;
+    position: relative;
+    height: 100%;
+    font-weight: 400;
+    white-space: nowrap;
+    padding: 0 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+}
+
 
 #logo {
     width: 80px;
     height: 80px;
     margin: 80px 0 0 5px;
+    margin-top: auto;
 }
 
 .unicode {
-    font-size: 24px;
+    font-size: 18px;
     margin-left: 40px;
     cursor: pointer;
 }
 
+
 .home-text {
-    line-height: 1.6; 
     padding: 20px;
-    background-color: #333; 
+    background-color: rgba(46,46,56,255); 
     border-radius: 10px; 
     max-width: 800px; 
     margin: 20px auto; 
-}
-
-.comments {
-    color: yellow;
+    color: rgba(252,186,3,255);
 }
 
 #content-container {
     display: block; 
+    background-color: #797878; /* Sonic Silver */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #registration-container,
 #login-container {
-    display: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .input-container {
@@ -67,23 +116,25 @@ label {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 3px;
-    transition: background-color 0.3s;
 }
 
 .event-link:hover {
     background-color: #0056b3;
 }
 
-
-#navbar {
-    position: absolute; /* Positioning context is the entire document */
-    top: 0; /* Positioned at the top */
-    right: 0; /* Positioned at the right */
-    display: flex; /* Elements will be in a row */
-}
-
 #registration,
 #login {
-    margin-left: 10px; /* Space between the elements */
+    color: rgba(252,186,3,255);
+   position:absolute; /* Positioning context is the navbar */
+   top :10px; /* Positioned at the top with some space */
 }
+
+#registration {
+   right :120px; /* Positioned from the right with some space */
+}
+
+#login {
+   right :40px; /* Positioned from the right with some space */
+}
+
 

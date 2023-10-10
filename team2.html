@@ -3,45 +3,26 @@
 
 <head>
     <title>Team2</title>
-    <link rel="icon" type="image/x-icon" href="https://cws.auckland.ac.nz/ako/api/Logo">
+    <link rel="icon" type="image" href="../2023eyteam2/static/cbs.png">
     <link rel="stylesheet" href="team2.css">
 </head>
 
 <body>
-    <div>
-        <img id="logo" src="https://cws.auckland.ac.nz/ako/api/Logo" alt="Logo">
-        <span id="home" class="unicode" onclick="showhome()">Home</span>
-        <span id="registration" class="unicode">register</span>
-        <span id="login" class="unicode">login</span>
-        <span id="events" class="unicode"onclick="showevents()">events</span>
-        <span id="points" class="unicode">points</span>
-        
-        <span id="username-display" style="right: 10px; color: white; display: none;"></span>
-        <button id="logout-button"
-            style="position: absolute; right: 100px; color: white; background-color: red; display: none;"
-            onclick="logout()">Log out</button>
-
+    <header class="navbar-container">
+        <nav>
+            <div>
+                <img id="logo" src="../2023eyteam2/static/cbs.png" alt="Logo">
+                <span id="home" class="unicode" onclick="showhome()">Home</span>
+                <span id="registration" class="unicode">Register</span>
+                <span id="login" class="unicode">Login</span>
+                <span id="events" class="unicode"onclick="showevents()">Events</span>
+                <span id="username-display" style="right: 10px; color: white; display: none;"></span>
+            </div>
+        </nav>
     </div>
-
-    <div id="content-container">
-        <p class="home-text">Embarking on the journey of higher education is an exhilarating chapter in a student’s life, offering a blend of academic pursuits, personal growth, and boundless opportunities. Yet, the road isn't without its challenges. With the aftermath of a global pandemic reshaping our social interactions, coupled with the myriad of personal and logistical barriers university students often face, it's more crucial than ever to find innovative ways to stay connected.
-
-            At C&BS, we recognize these challenges - be it the rush of conflicting schedules, the daunting commute, language barriers that international students face, or the anxiety of venturing into new social territories. That's why we've created a comprehensive platform tailored for university students to help bridge these gaps.
+    
+    </header>
             
-            Discover an array of events and networking opportunities, tailored to your interests and schedule. Navigate effortlessly with clickable map links, immerse yourself in cultural learnings, and even find friends with common interests. From providing financial support options to fostering connections between students, UniConnect is your dedicated companion in making your university journey more socially enriching.
-            
-            Join us, and redefine your university experience.</p>
-        
-    </div>
-    <div class="events-section">
-        <h2>Your Upcoming Events</h2>
-        <ul class="events-list" id="upcoming-events-list">
-            <li><a href="#">Event 2: International Students Meetup</a></li>
-            <li><a href="#">Event 3: Tech Talk: Future of Education</a></li>
-            <li><a href="#">Event 4: UniConnect Fest</a></li>
-        </ul>
-    </div>
-
     <div id="registration-container">
         <h1>Registration</h1>
         <div class="input-container">
@@ -69,6 +50,17 @@
             <input id="login-password-input" type="password" placeholder="Password">
         </div>
         <button type="button" onclick="submitLogin()">Login</button>
+    </div>
+    
+    <div id="content-container">
+        <p class="home-text">Embarking on the journey of higher education is an exhilarating chapter in a student’s life, offering a blend of academic pursuits, personal growth, and boundless opportunities. Yet, the road isn't without its challenges. With the aftermath of a global pandemic reshaping our social interactions, coupled with the myriad of personal and logistical barriers university students often face, it's more crucial than ever to find innovative ways to stay connected.
+
+            At C&BS, we recognize these challenges - be it the rush of conflicting schedules, the daunting commute, language barriers that international students face, or the anxiety of venturing into new social territories. That's why we've created a comprehensive platform tailored for university students to help bridge these gaps.
+            
+            Discover an array of events and networking opportunities, tailored to your interests and schedule. Navigate effortlessly with clickable map links, immerse yourself in cultural learnings, and even find friends with common interests. From providing financial support options to fostering connections between students, UniConnect is your dedicated companion in making your university journey more socially enriching.
+            
+            Join us, and redefine your university experience.</p>
+        
     </div>
 
     <div id="events-container" style="display: block;">
