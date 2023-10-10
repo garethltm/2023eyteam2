@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     
+    
     const eventsContainer = document.getElementById('events-list');
     const upcomingEventsList = document.getElementById('upcoming-events-list');
 
@@ -8,20 +9,22 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // When "Add to Upcoming" button is clicked
         if (e.target && e.target.classList.contains('add-event-btn')) {
-            // Get the event card (the parent element of the button)
             const eventCard = e.target.parentElement;
-
-            // Get the event title (we assume it's the text of the h2 element inside the card)
             const eventTitle = eventCard.querySelector('h2').innerText;
-
-            // Create a new list item for the upcoming events list
+            
             const newEventListItem = document.createElement('li');
             const newEventLink = document.createElement('a');
             newEventLink.href = "#";
             newEventLink.innerText = eventTitle;
-
-            // Append the link to the list item and the list item to the upcoming events list
+            
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Delete';
+            deleteButton.addEventListener('click', function() {
+                upcomingEventsList.removeChild(newEventListItem);
+            });
+            
             newEventListItem.appendChild(newEventLink);
+            newEventListItem.appendChild(deleteButton);
             upcomingEventsList.appendChild(newEventListItem);
 
             // Remove the original event card from the events container
