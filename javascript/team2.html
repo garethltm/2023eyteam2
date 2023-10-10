@@ -15,14 +15,14 @@
                 <span id="home" class="unicode" onclick="showhome()">Home</span>
                 <span id="registration" class="unicode">Register</span>
                 <span id="login" class="unicode">Login</span>
-                <span id="events" class="unicode"onclick="showevents()">Events</span>
+                <span id="events" class="unicode" onclick="document.getElementById('events-container').scrollIntoView();">Events</span>
                 <span id="username-display" style="right: 10px; color: white; display: none;"></span>
             </div>
         </nav>
     </div>
     
     </header>
-            
+    
     <div id="registration-container">
         <h1>Registration</h1>
         <div class="input-container">
@@ -51,16 +51,9 @@
         </div>
         <button type="button" onclick="submitLogin()">Login</button>
     </div>
-    
     <div id="content-container">
-        <p class="home-text">Embarking on the journey of higher education is an exhilarating chapter in a student’s life, offering a blend of academic pursuits, personal growth, and boundless opportunities. Yet, the road isn't without its challenges. With the aftermath of a global pandemic reshaping our social interactions, coupled with the myriad of personal and logistical barriers university students often face, it's more crucial than ever to find innovative ways to stay connected.
-
-            At C&BS, we recognize these challenges - be it the rush of conflicting schedules, the daunting commute, language barriers that international students face, or the anxiety of venturing into new social territories. That's why we've created a comprehensive platform tailored for university students to help bridge these gaps.
-            
-            Discover an array of events and networking opportunities, tailored to your interests and schedule. Navigate effortlessly with clickable map links, immerse yourself in cultural learnings, and even find friends with common interests. From providing financial support options to fostering connections between students, UniConnect is your dedicated companion in making your university journey more socially enriching.
-            
-            Join us, and redefine your university experience.</p>
-        
+        <img id="bg" src="../javascript/static/uoa.jpg">
+        <p class="home-text">WHAT'S ON</p>
     </div>
 
     <div id="events-container" style="display: block;">
@@ -110,26 +103,7 @@
                 <button class="add-event-btn">Add to Upcoming</button>
             </div>
         </div>
-    </div>
-
-    <div class="commute-container">
-        <h2>Commute Distance Calculator</h2>
-        <label for="start-location">Start Location:</label>
-        <input type="text" id="start-location" placeholder="Enter starting point">
-    
-        <label for="end-location">End Location:</label>
-        <input type="text" id="end-location" placeholder="Enter destination">
-    
-        <button id="calculate-btn">Calculate</button>
-    
-        <div class="results">
-            <p><strong>Distance:</strong> <span id="distance-result">-</span></p>
-            <p><strong>Estimated Time:</strong> <span id="time-result">-</span></p>
-        </div>
-    </div>
-    
-    
-
+    </div>    
 
 <script src="team2.js"></script>
 </body>
