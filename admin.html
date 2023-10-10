@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Team2</title>
+    <title>Ako Māori</title>
     <link rel="icon" type="image/x-icon" href="https://cws.auckland.ac.nz/ako/api/Logo">
     <link rel="stylesheet" href="team2.css">
 </head>
@@ -10,11 +10,15 @@
 <body>
     <div>
         <img id="logo" src="https://cws.auckland.ac.nz/ako/api/Logo" alt="Logo">
-        <span id="events" class="unicode" onclick="showhome()">Home</span>
-        <span id="registration" class="unicode">register</span>
-        <span id="login" class="unicode">login</span>
-        <span id="events" class="unicode"onclick="showevents()">events</span>
-        <span id="points" class="unicode">points</span>
+        <span id="events" class="unicode" onclick="showhome()">🏠 </span>
+        <span id="guestbook" class="unicode" onclick="showcomment()"></span>
+        <span id="shop" class="unicode">🛒</span>
+        <span id="registration" class="unicode">👪</span>
+        <span id="login" class="unicode">👩</span>
+        <span id="events" class="unicode">📅</span>
+        <span id="game" class="unicode">📖</span>
+
+
         
         <span id="username-display" style="right: 10px; color: white; display: none;"></span>
         <button id="logout-button"
@@ -24,7 +28,8 @@
     </div>
 
     <div id="content-container">
-        <p class="home-text">Embarking on the journey of higher education is an exhilarating chapter in a student’s life, offering a blend of academic pursuits, personal growth, and boundless opportunities. Yet, the road isn't without its challenges. With the aftermath of a global pandemic reshaping our social interactions, coupled with the myriad of personal and logistical barriers university students often face, it's more crucial than ever to find innovative ways to stay connected.
+        <h1>C&BS</h1>
+        <p class="white-text">Embarking on the journey of higher education is an exhilarating chapter in a student’s life, offering a blend of academic pursuits, personal growth, and boundless opportunities. Yet, the road isn't without its challenges. With the aftermath of a global pandemic reshaping our social interactions, coupled with the myriad of personal and logistical barriers university students often face, it's more crucial than ever to find innovative ways to stay connected.
 
             At C&BS, we recognize these challenges - be it the rush of conflicting schedules, the daunting commute, language barriers that international students face, or the anxiety of venturing into new social territories. That's why we've created a comprehensive platform tailored for university students to help bridge these gaps.
             
@@ -33,8 +38,33 @@
             Join us, and redefine your university experience.</p>
     </div>
 
+
+    <div id="comment-container">
+        <h1>Pukapuka manuwhiri</h1>
+        <div id="guestbook-form">
+            <div class="input-container">
+                <label for="comment-input">Comment:</label>
+                <textarea id="comment-input" placeholder="Your Comment"></textarea>
+            </div>
+
+            <div class="input-container">
+                <label for="name-input">Name:</label>
+                <input id="name-input" type="text" placeholder="Your Name">
+            </div>
+            <button type="button" onclick="submitComment()">Submit</button>
+
+
+
+        </div>
+
+        <p style="color: white; font-weight: bolder;">
+            Recent Entries
+        </p>
+        <iframe id="comments-frame" class="comments" src="https://cws.auckland.ac.nz/ako/api/Comments"
+            style="width:100%; height: 300px;"></iframe>
+    </div>
     <div id="registration-container">
-        <h1>Registration</h1>
+        <h1>Pukapuka rehita</h1>
         <div class="input-container">
             <label for="username-input">Username:</label>
             <input id="username-input" type="text" placeholder="Your Username">
@@ -50,7 +80,7 @@
         <button type="button" onclick="submitRegistration()">Register</button>
     </div>
     <div id="login-container">
-        <h1>Login</h1>
+        <h1>Takiuru</h1>
         <div class="input-container">
             <label for="login-username-input">Username:</label>
             <input id="login-username-input" type="text" placeholder="Username">
@@ -63,7 +93,7 @@
     </div>
 
     <div id="events-container" style="display: none;">
-        <h1>Events</h1>
+        <h1>Kauhau</h1>
         <div id="events-list"></div>
     </div>
     <div id="shop-container" style="display: none;">
@@ -72,7 +102,17 @@
         <div id="items-list"></div>
     </div>
 
+    <div id="game-container" style="width: 80%; display: none; flex-direction: column;">
+        <h1>Mahi</h1>
+        <div id="main-container">
+            <div id="score-display">score: 0</div>
+            <div id="fixed-and-drop-zone"></div>
+            <div id="draggable-column"></div>
+        </div>
+        
+    </div>
 <script src="team2.js"></script>
+    <p id="api-content" style="font-size: small; text-align: center; color: aliceblue;">&copy; cxio665</p>
 </body>
 
 </html>
