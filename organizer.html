@@ -11,7 +11,6 @@
     <div>
         <img id="logo" src="https://cws.auckland.ac.nz/ako/api/Logo" alt="Logo">
         <span id="home" class="unicode" onclick="showhome()">Home</span>
-        <span id="registration" class="unicode">register</span>
         <span id="logout" class="unicode" onclick="redirectToTeam2()">logout</span>
         <span id="events" class="unicode"onclick="showevents()">events</span>
         <span id="points" class="unicode">points</span>
@@ -71,6 +70,8 @@
         </div>
         <button type="button" onclick="submitLogin()">Login</button>
     </div>
+
+    <button id="createEventBtn">Create Event</button>
 
     <div id="events-container" style="display: block;">
         <h1>Events</h1>
@@ -137,6 +138,23 @@
         </div>
     </div>
     
+    <div id="createEventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Event</h2>
+            <label>Title:</label>
+            <input type="text" id="eventTitle">
+            <label>Date:</label>
+            <input type="date" id="eventDate">
+            <label>Time:</label>
+            <input type="time" id="eventTime">
+            <label>Location:</label>
+            <input type="text" id="eventLocation">
+            <label>Description:</label>
+            <textarea id="eventDescription"></textarea>
+            <button id="submitEvent">Add Event</button>
+        </div>
+    </div>
     
 
 
@@ -144,5 +162,3 @@
 </body>
 
 </html>
-
-    

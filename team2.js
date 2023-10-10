@@ -9,60 +9,20 @@ const showhome = () => {
     document.getElementById("events").style.backgroundColor = "transparent";
 
 }
-
-const showregistration = () => {
+const showdistance = () => {
     document.getElementById("content-container").style.display = "none";
     document.getElementById("login-container").style.display = "none";
     document.getElementById("events-container").style.display = "none";
-    document.getElementById("registration-container").style.display = "block";
+    document.getElementById("registration-container").style.display = "none";
+    document.getElementById("commute-container").style.display = "block";
+    document.getElementById("distance").style.backgroundColor = "red";
     document.getElementById("home").style.backgroundColor = "transparent";
-    document.getElementById("registration").style.backgroundColor = "red";
+    document.getElementById("registration").style.backgroundColor = "transparent";
     document.getElementById("login").style.backgroundColor = "transparent";
     document.getElementById("events").style.backgroundColor = "transparent";
 }
 
-function submitRegistration() {
-    const usernameInput = document.getElementById('username-input');
-    const passwordInput = document.getElementById('password-input');
-    const addressInput = document.getElementById('address-input');
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-    const address = addressInput.value;
-
-    if (username && password && address) {
-        const data = {
-            username: username,
-            password: password,
-            address: address
-        };
-
-        fetch('https://cws.auckland.ac.nz/ako/api/Register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert(data);  
-            if(data !== "Username not available") {
-                usernameInput.value = '';
-                passwordInput.value = '';
-                addressInput.value = '';
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    } else {
-        alert('Please fill out all fields.');
-    }
-}
-
-
-document.getElementById("registration").addEventListener("click", showregistration);
 
 
 const showlogin = () => {
@@ -84,9 +44,14 @@ function submitLogin() {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    if (username === 'admin') {
-        window.location.href = 'admin.html';
+    if (username === 'organizer') {
+        window.location.href = 'organizer.html';
     }
+    else {
+        window.location.href = 'student.html';
+    }
+
+
     
     const base64Credentials = btoa(username + ':' + password);
 }
@@ -156,115 +121,7 @@ function isUserLoggedIn() {
 }
 
 
-function createCard(text, type, isDraggable = false, isDroppable = false) {
-    const card = document.createElement('div');
-    card.className = `card ${type}`;
-    
-    if (text.startsWith('data:image')) {
-        const img = document.createElement('img');
-        img.src = text;
-        card.appendChild(img);
-    } else if (text.startsWith('data:audio')) {
-        const audio = document.createElement('audio');
-        audio.controls = true;
-        const source = document.createElement('source');
-        source.src = text;
-        source.type = 'audio/mpeg';
-        audio.appendChild(source);
-        card.appendChild(audio);
-    } else {
-        card.innerText = text;
-    }
-    
-    card.draggable = isDraggable;
 
-    if (isDraggable) {
-        card.addEventListener('dragstart', handleDragStart);
-        card.addEventListener('dragend', handleDragEnd);
-    }
-    
-    if (isDroppable) {
-        card.addEventListener('drop', handleDrop);
-        card.addEventListener('dragover', handleDragOver);
-    }
-
-    return card;
-}
-
-let draggedItem = null;
-
-function handleDragStart(e) {
-    draggedItem = this;
-}
-
-function handleDragEnd(e) {
-    this.style.opacity = '1';
-}
-
-function handleDragOver(e) {
-    e.preventDefault();
-}
-
-function handleDrop(e) {
-    e.preventDefault();
-    const isMatch = checkMatchAndUpdateScore(draggedItem, this);
-    if (isMatch) {
-        if (draggedItem.querySelector('img')) {
-            this.innerHTML = draggedItem.innerHTML;
-        } else if (draggedItem.querySelector('audio')) {
-            this.innerHTML = draggedItem.innerHTML;
-        } else {
-            this.innerText = draggedItem.innerText;
-        }
-        this.classList.add('correct');
-        draggedItem.style.display = 'none';
-        score++;
-        document.getElementById('score-display').innerText = `score: ${score}`;
-        alert("you are right!");
-    } else {
-        alert("you are wrong.Please try again");
-    }
-}
-
-
-function checkMatchAndUpdateScore(dragged, target) {
-    const englishCardAdjacent = target.previousElementSibling;
-    
-    let englishText;
-    if (englishCardAdjacent.querySelector('img')) {
-        englishText = englishCardAdjacent.querySelector('img').src;
-    } else if (englishCardAdjacent.querySelector('audio')) {
-        englishText = englishCardAdjacent.querySelector('audio source').src;
-    } else {
-        englishText = englishCardAdjacent.innerText;
-    }
-
-    const matchingPair = pairsArray.find(pair => pair.english === englishText);
-    let draggedText;
-    if (dragged.querySelector('img')) {
-        draggedText = dragged.querySelector('img').src;
-    } else if (dragged.querySelector('audio')) {
-        draggedText = dragged.querySelector('audio source').src;
-    } else {
-        draggedText = dragged.innerText;
-    }
-
-    return matchingPair && matchingPair.maori === draggedText;
-}
-
-function fetchAPIContent() {
-    fetch('https://cws.auckland.ac.nz/ako/api/Version')
-    .then(response => response.text())
-    .then(data => {
-        
-        document.getElementById('api-content').innerHTML = '&copy; ' + data;
-    })
-    .catch(error => {
-        console.error('Error fetching API content:', error);
-    });
-}
-
-fetchAPIContent();
 document.addEventListener('DOMContentLoaded', function() {
     const eventsContainer = document.getElementById('events-list');
     const upcomingEventsList = document.getElementById('upcoming-events-list');
@@ -296,3 +153,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+document.getElementById("submitEvent").addEventListener("click", function() {
+    const title = document.getElementById("eventTitle").value;
+    const date = document.getElementById("eventDate").value;
+    const time = document.getElementById("eventTime").value;
+    const location = document.getElementById("eventLocation").value;
+    const description = document.getElementById("eventDescription").value;
+
+    // 创建新的事件卡片并添加到events-list中
+    // ...（按需添加代码）
+
+    // 关闭模态框
+    modal.style.display = "none";
+});
+
+function redirectToTeam2() {
+    window.location.href = "team2.html";
+}
+
