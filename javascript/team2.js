@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function showLogin  () {
     document.getElementById("content-container").style.display = "none";
     document.getElementById("registration-container").style.display = "none";
-    document.getElementById("login-container").style.display = "block";
+    document.getElementById("login-container").style.display = "flex";
     document.getElementById("events-container").style.display = "none";
     document.getElementById("home").style.backgroundColor = "transparent";
     document.getElementById("registration").style.backgroundColor = "transparent";

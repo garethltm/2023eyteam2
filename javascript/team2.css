@@ -4,6 +4,10 @@ body {
     font-family: 'Optima Bold Italic', sans-serif;
     line-height: 1.6;
 }
+.input-container label {
+    color: yellow;
+}
+
 
 .navbar-container {
     display: flex;
@@ -175,7 +179,9 @@ body {
 
 #registration-container,
 #login-container {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -302,4 +308,46 @@ label {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+}
+#login-container {
+    font-size: 18px; /* Increase font size */
+    width: 80%;  /* Make the container wider. You can adjust as per requirement */
+    margin: 0 auto;  /* Center the container */
+    padding: 20px;  /* Add padding around content */
+    border: 1px solid #ccc;  /* Add a light border */
+    border-radius: 5px;  /* Round the corners */
+    background-color: #f9f9f9;  /* Light grey background */
+}
+
+.input-container {
+    margin-bottom: 15px;  /* Add space between input fields */
+}
+
+.input-container label {
+    display: block;  /* Make labels take the full width */
+    margin-bottom: 5px;  /* Add space between label and input */
+    color: yellow;  /* Keep the label color as yellow */
+}
+
+.input-container input {
+    width: 100%;  /* Make the input fields take the full width */
+    padding: 10px;  /* Add padding inside the input */
+    font-size: 16px;  /* Increase the font size */
+    border-radius: 4px;  /* Slight round on input corners */
+    border: 1px solid #ccc;  /* A subtle border */
+}
+
+#submitLogin {
+    padding: 10px 20px;  /* Add padding around the button */
+    font-size: 18px;  /* Increase font size */
+    background-color: #007BFF;  /* A blue background */
+    color: white;  /* White text */
+    border: none;  /* Remove border */
+    border-radius: 4px;  /* Slight round on button corners */
+    cursor: pointer;  /* Add a hand cursor on hover */
+    transition: background-color 0.3s;  /* Smooth transition for hover effect */
+}
+
+#submitLogin:hover {
+    background-color: #0056b3;  /* Darken the button color on hover */
 }
