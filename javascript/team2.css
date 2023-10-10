@@ -54,6 +54,52 @@ body {
     color: #0056b3;
 }
 
+#events-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.event-card {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.event-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.event-card .event-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.event-card .add-event-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.event-card .add-event-btn:hover {
+    background-color: #0055a3;
+}
 
 
 #events {
