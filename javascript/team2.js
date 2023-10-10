@@ -1,4 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const eventsContainer = document.getElementById('events-list');
+    const upcomingEventsList = document.getElementById('upcoming-events-list');
+
+    // Add event listener to the events container
+    eventsContainer.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('add-event-btn')) {
+            // Get the event card (the parent element of the button)
+            const eventCard = e.target.parentElement;
+
+            // Get the event title (we assume it's the text of the h2 element inside the card)
+            const eventTitle = eventCard.querySelector('h2').innerText;
+
+            // Create a new list item for the upcoming events list
+            const newEventListItem = document.createElement('li');
+            const newEventLink = document.createElement('a');
+            newEventLink.href = "#";
+            newEventLink.innerText = eventTitle;
+
+            // Append the link to the list item and the list item to the upcoming events list
+            newEventListItem.appendChild(newEventLink);
+            upcomingEventsList.appendChild(newEventListItem);
+
+            // Remove the original event card from the events container
+            eventsContainer.removeChild(eventCard);
+        }
+    });
     function showHome () {
     document.getElementById("content-container").style.display = "block";
     document.getElementById("events-container").style.display = "block";
@@ -38,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("distance").addEventListener("click", showdistance);
 
 
+    
 
 
     function showLogin  () {
@@ -176,5 +203,87 @@ document.addEventListener("DOMContentLoaded", function() {
     
     document.getElementById("logout").addEventListener("click", redirectToTeam2);
     
+    const modal = document.getElementById("eventModal");
+const btn = document.getElementById("createEventBtn");
+const span = document.getElementsByClassName("close")[0];
+const submitBtn = document.getElementById("submitEvent");
+
+// 显示模态框
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// 关闭模态框
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// 点击外部关闭模态框
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// 提交表单数据并创建新事件
+submitBtn.onclick = function() {
+    const title = document.getElementById("newEventTitle").value;
+    const date = document.getElementById("newEventDate").value;
+    const time = document.getElementById("newEventTime").value;
+    const location = document.getElementById("newEventLocation").value;
+    const description = document.getElementById("newEventDescription").value;
+
+    const newEventCard = document.createElement('div');
+    newEventCard.className = 'event-card';
+
+    newEventCard.innerHTML = `
+        <h2>${title}</h2>
+        <p>Date: ${date}</p>
+        <p>Time: ${time}</p>
+        <p>Location: ${location}</p>
+        <p>Description: ${description}</p>
+        <a href="#" class="event-link">Learn More</a>
+        <button class="add-event-btn">Add to Upcoming</button>
+    `;
+
+    document.getElementById("events-list").appendChild(newEventCard);
+    modal.style.display = "none";
+    const events = JSON.parse(localStorage.getItem('events') || '[]');
+
+    // Create new event object
+    const newEvent = {
+        title: title,
+        date: date,
+        time: time,
+        location: location,
+        description: description
+    };
+
+    // Push new event to events array
+    events.push(newEvent);
+
+    // Save events array back to localStorage
+    localStorage.setItem('events', JSON.stringify(events));
+}
+const events = JSON.parse(localStorage.getItem('events') || '[]');
+
+    // Iterate over events and add each to events-list
+    events.forEach(event => {
+        const newEventCard = document.createElement('div');
+        newEventCard.className = 'event-card';
+
+        newEventCard.innerHTML = `
+            <h2>${event.title}</h2>
+            <p>Date: ${event.date}</p>
+            <p>Time: ${event.time}</p>
+            <p>Location: ${event.location}</p>
+            <p>Description: ${event.description}</p>
+            <a href="#" class="event-link">Learn More</a>
+            <button class="add-event-btn">Add to Upcoming</button>
+        `;
+
+        document.getElementById("events-list").appendChild(newEventCard);
+    });
+
     
 })
