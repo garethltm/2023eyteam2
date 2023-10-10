@@ -1,11 +1,13 @@
-import './App.css'
+import React from 'react'
+import {Navbar, Button} from './components';
+
 
 function App() {
 
   return (
     <>
     <h1 className="text-3xl font-bold underline">
-      Hello world!
+      <Navbar />
     </h1>
     </>
   )
