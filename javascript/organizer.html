@@ -8,20 +8,20 @@
 </head>
 
 <body>
-    <div>
-        <img id="logo" src="https://cws.auckland.ac.nz/ako/api/Logo" alt="Logo">
-        <span id="home" class="unicode" onclick="showhome()">Home</span>
-        <span id="logout" class="unicode" onclick="redirectToTeam2()">logout</span>
-        <span id="events" class="unicode"onclick="showevents()">events</span>
-        <span id="points" class="unicode">points</span>
-        <span id="distance" class="unicode"onclick="showdistance()">diatance</span>
-        
-        <span id="username-display" style="right: 10px; color: white; display: none;"></span>
-        <button id="logout-button"
-            style="position: absolute; right: 100px; color: white; background-color: red; display: none;"
-            onclick="logout()">Log out</button>
-
-    </div>
+    <header class="navbar-container">
+        <nav>
+            <div>
+                <img id="logo" src="../2023eyteam2/static/cbs.png" alt="Logo">
+                <span id="home" class="unicode" >Home</span>
+                <span id="registration" class="unicode" style="display: none;">Register</span>
+                <span id="login" class="unicode" style="display: none;">Login</span>
+                <span id="logout" class="unicode" >Logout</span>
+                <span id="events" class="unicode" >Events</span>
+                <span id="distance" class="unicode" style="display: none;">distance</span>
+                <span id="username-display" style="right: 10px; color: white; display: none;"></span>
+            </div>
+        </nav>
+    </header>
 
     <div id="content-container">
         <p class="home-text">Embarking on the journey of higher education is an exhilarating chapter in a student’s life, offering a blend of academic pursuits, personal growth, and boundless opportunities. Yet, the road isn't without its challenges. With the aftermath of a global pandemic reshaping our social interactions, coupled with the myriad of personal and logistical barriers university students often face, it's more crucial than ever to find innovative ways to stay connected.
@@ -42,7 +42,7 @@
         </ul>
     </div>
 
-    <div id="registration-container">
+    <div id="registration-container" style="display: none;">
         <h1>Registration</h1>
         <div class="input-container">
             <label for="username-input">Username:</label>
@@ -58,7 +58,7 @@
         </div>
         <button type="button" onclick="submitRegistration()">Register</button>
     </div>
-    <div id="login-container">
+    <div id="login-container" style="display: none;">
         <h1>Login</h1>
         <div class="input-container">
             <label for="login-username-input">Username:</label>
@@ -68,11 +68,10 @@
             <label for="login-password-input">Password:</label>
             <input id="login-password-input" type="password" placeholder="Password">
         </div>
-        <button type="button" onclick="submitLogin()">Login</button>
+        <button id="submitLogin" type="button" >Login</button>
     </div>
 
-    <button id="createEventBtn">Create Event</button>
-
+    
     <div id="events-container" style="display: block;">
         <h1>Events</h1>
         <div id="events-list">
@@ -122,7 +121,7 @@
         </div>
     </div>
 
-    <div class="commute-container">
+    <div class="commute-container" style="display: none;">
         <h2>Commute Distance Calculator</h2>
         <label for="start-location">Start Location:</label>
         <input type="text" id="start-location" placeholder="Enter starting point">
@@ -138,23 +137,27 @@
         </div>
     </div>
     
-    <div id="createEventModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Create New Event</h2>
-            <label>Title:</label>
-            <input type="text" id="eventTitle">
-            <label>Date:</label>
-            <input type="date" id="eventDate">
-            <label>Time:</label>
-            <input type="time" id="eventTime">
-            <label>Location:</label>
-            <input type="text" id="eventLocation">
-            <label>Description:</label>
-            <textarea id="eventDescription"></textarea>
-            <button id="submitEvent">Add Event</button>
-        </div>
+    <!-- Modal -->
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <label for="newEventTitle">Title:</label>
+        <input id="newEventTitle" type="text">
+        <label for="newEventDate">Date:</label>
+        <input id="newEventDate" type="text">
+        <label for="newEventTime">Time:</label>
+        <input id="newEventTime" type="text">
+        <label for="newEventLocation">Location:</label>
+        <input id="newEventLocation" type="text">
+        <label for="newEventDescription">Description:</label>
+        <textarea id="newEventDescription"></textarea>
+        <button id="submitEvent">Submit</button>
     </div>
+</div>
+
+<!-- Trigger button -->
+<button id="createEventBtn">Create Event</button>
+
     
 
 
