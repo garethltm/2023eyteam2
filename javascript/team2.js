@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (username === 'organizer') {
         window.location.href = 'organizer.html';
     }
-    else {
+    else if(username === 'student'){
         window.location.href = 'student.html';
     }
 
@@ -170,10 +170,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     });
 
-
-
     function redirectToTeam2() {
-    window.location.href = "team2.html";
-    }
+        window.location.href = "team2.html";
+        }
+    
+    document.getElementById("logout").addEventListener("click", redirectToTeam2);
+    
     
 })

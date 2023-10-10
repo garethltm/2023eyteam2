@@ -31,6 +31,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     
+
+
+    function formatDate(isoString) {
+
+    const year = isoString.slice(0, 4);
+    const month = isoString.slice(4, 6);
+    const day = isoString.slice(6, 8);
+    const hours = isoString.slice(9, 11);
+    const minutes = isoString.slice(11, 13);
+    const seconds = isoString.slice(13, 15);
+
+
+    const dateObj = new Date(Date.UTC(year, month - 1, day, hours, minutes, seconds));
+
+
+    return dateObj.toLocaleString();
+    }
+
     const showEvents = () => {
 
     document.getElementById("content-container").style.display = "block";

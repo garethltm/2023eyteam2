@@ -16,9 +16,7 @@ body {
     background-color: #333; /* Adds a background color to the navbar */
 }
 
-#home,
-#registration,
-#login,
+
 #events {
     color: white;
     margin-right: 20px; /* Adds some space between the items */

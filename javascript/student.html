@@ -14,6 +14,9 @@
                 <img id="logo" src="../2023eyteam2/static/cbs.png" alt="Logo">
                 <span id="home" class="unicode" >Home</span>
                 <span id="logout" class="unicode" >Logout</span>
+                <span id="registration" class="unicode" style="display: none;">Register</span>
+                <span id="login" class="unicode" style="display: none;">Login</span>
+
                 <span id="events" class="unicode" >Events</span>
                 <span id="distance" class="unicode" >distance</span>
                 <span id="username-display" style="right: 10px; color: white; display: none;"></span>
@@ -106,11 +109,38 @@
             <p><strong>Estimated Time:</strong> <span id="time-result">-</span></p>
         </div>
     </div>
-    
+    <div id="registration-container" style="display: none;">
+        <h1>Registration</h1>
+        <div class="input-container">
+            <label for="username-input">Username:</label>
+            <input id="username-input" type="text" placeholder="Your Username">
+        </div>
+        <div class="input-container">
+            <label for="password-input">Password:</label>
+            <input id="password-input" type="password" placeholder="Your Password">
+        </div>
+        <div class="input-container">
+            <label for="address-input">Address:</label>
+            <input id="address-input" type="text" placeholder="Your Address">
+        </div>
+        <button type="button" onclick="submitRegistration()">Register</button>
+    </div>
+    <div id="login-container" style="display: none;">
+        <h1>Login</h1>
+        <div class="input-container">
+            <label for="login-username-input">Username:</label>
+            <input id="login-username-input" type="text" placeholder="Username">
+        </div>
+        <div class="input-container">
+            <label for="login-password-input">Password:</label>
+            <input id="login-password-input" type="password" placeholder="Password">
+        </div>
+        <button id="submitLogin" type="button" >Login</button>
+    </div>
     
 
 
-<script src="student.js"></script>
+<script src="team2.js"></script>
 </body>
 
 </html>
