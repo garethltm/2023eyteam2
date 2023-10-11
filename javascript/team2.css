@@ -2,6 +2,7 @@ body {
     background: #797878; /* Sonic Silver */
     color: #797878; /* Sonic Silver */
     font-family: 'Optima Bold Italic', sans-serif;
+    margin: 0;
     line-height: 1.6;
 }
 .input-container label {
@@ -40,9 +41,9 @@ body {
 
 #registration, #login {
     display: inline-block;
-    margin: 0 10px;
+    margin: 10px 10px; /* Adjust the first value as needed */
     padding: 10px 20px;
-    background-color: rgba(252,186,3,1); /* Your provided color */
+    background-color: rgba(252,186,3,1);
     border: none;
     color: white;
     text-align: center;
@@ -50,7 +51,7 @@ body {
     font-size: 16px;
     transition-duration: 0.4s;
     cursor: pointer;
-    border-radius: 12px; /* Added this line to soften the edges */
+    border-radius: 12px;
 }
 
 
@@ -143,6 +144,7 @@ body {
 }
 
 .event-card .add-event-btn:hover {
+    cursor: pointer;
     background-color: #0055a3;
 }
 
@@ -157,7 +159,7 @@ body {
 
 #logout {
     position: absolute; /* Positioning context is the entire document */
-    top: 15px; /* Positioned at the top */
+    top: 20px; /* Positioned at the top */
     right: 40px; /* Positioned at the right */
     display: inline-block;
     padding: 10px 20px;
@@ -212,6 +214,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #333;
 }
 
 .input-container {
@@ -361,6 +364,7 @@ label {
 }
 
 .remove-event-btn {
+    cursor: pointer;
     display: inline-block;
     padding: 10px 20px;
     color: white;
@@ -372,6 +376,7 @@ label {
 }
 
 .remove-event-btn:hover {
+    cursor: pointer;
     background-color: #c82333; /* Darken the red a bit on hover */
 }
 
