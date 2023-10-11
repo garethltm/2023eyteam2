@@ -7,23 +7,36 @@ body {
 .input-container label {
     color: yellow;
 }
+#home, #events {
+    position: relative;
+    top: -30px; /* You can adjust this value as needed */
+}
+
+
+.navbar-container nav div span {
+    padding: 10px 15px; /* Adds some padding around each span item */
+    text-transform: uppercase; /* Transforms text to uppercase */
+    cursor: pointer; /* Changes the cursor to a hand when hovering over the span elements */
+}
 
 .navbar-container nav div span:hover {
+    background-color: rgba(0,0,0,0.2); /* Slight dark background on hover */
     color: rgba(252,186,3,1); 
     transition: background-color 0.4s ease, color 0.4s ease;
-    border-radius: 25px; /* Added this line to soften the edges */
+    border-radius: 25px;
 }
 
 .navbar-container {
     display: flex;
     position: relative;
-    justify-content: flex-start; /* Aligns items to the start of the container */
-    align-items: center; /* Centers items vertically */
-    padding-left: 20px; /* Adds some space from the left edge of the page */
-    height: 85px; /* Sets the height of the navbar */
-    width: 100%; /* Makes the navbar span the full width of the page */
-    background-color: #333; /* Adds a background color to the navbar */
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    height: 85px;
+    width: 100%;
+    background-color: #333;
 }
+
 
 #registration, #login {
     display: inline-block;
