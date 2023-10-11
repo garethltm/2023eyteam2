@@ -19,12 +19,29 @@ document.addEventListener("DOMContentLoaded", function() {
             
             const deleteButton = document.createElement('button');
             deleteButton.innerText = 'Delete';
+            deleteButton.style.backgroundColor = '#dc3545'; /* Bootstrap danger red */
+            deleteButton.style.border = 'none';
+            deleteButton.style.color = '#fff';
+            deleteButton.style.padding = '5px 10px';
+            deleteButton.style.cursor = 'pointer';
+            deleteButton.style.borderRadius = '4px';
+            deleteButton.style.transition = 'background-color 0.3s ease'; /* Smooth background-color transition */
+            
+            deleteButton.addEventListener('mouseover', function() {
+                deleteButton.style.backgroundColor = '#c82333'; /* Darken the red a bit on hover */
+            });
+            
+            deleteButton.addEventListener('mouseout', function() {
+                deleteButton.style.backgroundColor = '#dc3545'; /* Change it back to original color when mouse leaves */
+            });
+            
             deleteButton.addEventListener('click', function() {
                 upcomingEventsList.removeChild(newEventListItem);
             });
             
             newEventListItem.appendChild(newEventLink);
             newEventListItem.appendChild(deleteButton);
+            
             upcomingEventsList.appendChild(newEventListItem);
 
             // Remove the original event card from the events container
@@ -45,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("events-container").style.display = "block";
     document.getElementById("registration-container").style.display = "none";
     document.getElementById("login-container").style.display = "none";
-    document.getElementById("home").style.backgroundColor = "red";
+    document.getElementById("home").style.backgroundColor = "none";
     document.getElementById("registration-container").style.backgroundColor = "transparent";
     document.getElementById("login").style.backgroundColor = "transparent";
     document.getElementById("events").style.backgroundColor = "transparent";
@@ -89,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("events-container").style.display = "none";
     document.getElementById("home").style.backgroundColor = "transparent";
     document.getElementById("registration").style.backgroundColor = "transparent";
-    document.getElementById("login").style.backgroundColor = "red";
+    document.getElementById("login").style.backgroundColor = "none";
     document.getElementById("events").style.backgroundColor = "transparent";
     }
 
@@ -164,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("home").style.backgroundColor = "transparent";
     document.getElementById("registration").style.backgroundColor = "transparent";
     document.getElementById("login").style.backgroundColor = "transparent";
-    document.getElementById("events").style.backgroundColor = "red";
+    document.getElementById("events").style.backgroundColor = "none";
 
 
     document.getElementById("events-container").style.display = "block";

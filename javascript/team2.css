@@ -8,7 +8,6 @@ body {
     color: yellow;
 }
 
-
 .navbar-container nav div span:hover {
     color: rgba(252,186,3,1); 
     transition: background-color 0.4s ease, color 0.4s ease;
@@ -210,7 +209,6 @@ label {
     display: block; 
     margin-bottom: 8px; 
 }
-
 .event-card {
     border: 1px solid #e0e0e0;
     padding: 20px;
@@ -226,16 +224,12 @@ label {
 .event-link {
     display: inline-block;
     margin-top: 10px;
-    background-color: #007bff;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 3px;
 }
 
-.event-link:hover {
-    background-color: #0056b3;
-}
 
 #registration,
 #login {
@@ -353,6 +347,21 @@ label {
     border: 1px solid #ccc;  /* A subtle border */
 }
 
+.remove-event-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #dc3545; /* Bootstrap danger red */
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.remove-event-btn:hover {
+    background-color: #c82333; /* Darken the red a bit on hover */
+}
+
 #submitLogin {
     padding: 10px 20px;  /* Add padding around the button */
     font-size: 18px;  /* Increase font size */
@@ -378,6 +387,7 @@ label {
 #upcoming-events-list li {
     padding: 5px 0;
 }
+
 /* Styles for the links */
 #upcoming-events-list a {
     text-decoration: none; /* Remove underline */
@@ -388,6 +398,7 @@ label {
 #upcoming-events-list a:hover {
     color: #0056b3; /* Darken the blue a bit on hover */
 }
+
 
 /* Styles for the delete button */
 .remove-upcoming-event-btn {
