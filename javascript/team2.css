@@ -351,3 +351,54 @@ label {
 #submitLogin:hover {
     background-color: #0056b3;  /* Darken the button color on hover */
 }
+/* Make each list item a flex container */
+#upcoming-events-list li {
+    display: flex;
+    justify-content: space-between;  /* This will push the link and button apart */
+    align-items: center;  /* This will vertically align the link and button in case they are of different heights */
+}
+
+/* Optional: Add some padding to the list item for better spacing */
+#upcoming-events-list li {
+    padding: 5px 0;
+}
+/* Styles for the links */
+#upcoming-events-list a {
+    text-decoration: none; /* Remove underline */
+    color: #007BFF; /* Bootstrap primary blue */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+#upcoming-events-list a:hover {
+    color: #0056b3; /* Darken the blue a bit on hover */
+}
+
+/* Styles for the delete button */
+.remove-upcoming-event-btn {
+    background-color: #dc3545; /* Bootstrap danger red */
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth background-color transition */
+}
+
+.remove-upcoming-event-btn:hover {
+    background-color: #c82333; /* Darken the red a bit on hover */
+}
+/* Styles for the Create Event button */
+#createEventBtn {
+    background-color: #007BFF; /* Primary blue color */
+    color: #ffffff; /* White text color */
+    border: none;
+    padding: 10px 20px; /* Top and bottom padding of 10px; Left and right padding of 20px */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Hand cursor on hover */
+    font-size: 16px; /* Adjust the font size if necessary */
+    transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+#createEventBtn:hover {
+    background-color: #0056b3; /* A darker shade of blue for hover */
+}
